@@ -4,18 +4,26 @@ import 'Models/ingredient.dart';
 import 'Models/recipe.dart';
 
 void main() {
-  Ingredient ingredient=Ingredient(
-      amount: 1,
-      name: 'salt',);
-  if (kDebugMode) {
-    print(ingredient.amount);
-  }
+
 
   Recipe cake=Recipe('cake',
-      [Ingredient(name: 'egg',amount: 1)],
-      ['mix ingredient']);
+      [Ingredient(name: 'egg',amount: 1),
+       Ingredient(name: 'flour',amount: 4, measurement: 'cups'),],
+      ['mix ingredient','put batter in pan']);
 
   print(cake.recipeName);
+
+  for(Ingredient item in cake.ingredients) {
+
+    int amount=item.amount;
+    String ingredientName=item.name;
+    String measurement=item.measurement;
+
+    print ('$amount $measurement $ingredientName');
+  }
+
+
+  print(cake.steps);
 
 }
 
