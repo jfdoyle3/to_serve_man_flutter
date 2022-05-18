@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'Models/ingredient.dart';
 
 void main() {
-  Ingredient ingredient=Ingredient(name: 'salt',type: 'spice');
+  Ingredient ingredient=Ingredient(
+      amount: 1,
+      measurement:'tsp',
+      name: 'salt',
+      type: 'spice');
   if (kDebugMode) {
     print(ingredient.amount);
   }

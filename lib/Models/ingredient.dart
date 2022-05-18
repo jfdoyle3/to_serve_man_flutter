@@ -9,8 +9,10 @@ class Ingredient{
 
   Ingredient({
     required this.name,
-    required this.type,
+    this.type='',
     this.amount = 0,
-    this.measurement = ""
+    this.measurement = ''
   });
+
+
 }
