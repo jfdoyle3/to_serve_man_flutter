@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'Models/ingredient.dart';
+import 'Models/recipe.dart';
+
 
 void main() {
-  runApp(MyApp());
+   runApp(MyApp());
   // Recipe cake=Recipe('cake',
   //     [Ingredient(name: 'egg',amount: 1),
   //      Ingredient(name: 'flour',amount: 4, measurement: 'cups'),],
@@ -18,7 +21,7 @@ void main() {
   //
   // for(String step in cake.steps) {
   //   print(step);
-  //}
+  // }
 }
 
 class MyApp extends StatefulWidget {
@@ -31,12 +34,30 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Recipe cake=Recipe('cake',
+      [Ingredient(name: 'egg',amount: 1),
+       Ingredient(name: 'flour',amount: 4, measurement: 'cups'),],
+      ['mix ingredient','put batter in pan']);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('To Serve Man'),
+        ),
+        body: Column(
+         children: [
+           const Text(
+             'Recipe Name:',
+           style: TextStyle(fontSize:  26)
+           ),
+           Text(
+             cake.recipeName,
+             style: TextStyle(fontSize: 25),
+           ),
+
+         ],
         ),
       ),
     );
