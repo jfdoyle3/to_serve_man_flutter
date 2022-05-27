@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 
-
-class Ingredient{
+class Ingredient extends StatefulWidget{
 
   int amount;
   String measurement;
@@ -14,5 +14,20 @@ class Ingredient{
     this.measurement = ''
   });
 
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
+
 
 }
+class _IngredientState extends State<Ingredient> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+}
+

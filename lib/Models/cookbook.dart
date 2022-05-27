@@ -4,5 +4,4 @@ class CookBook {
   List<Recipe> cookbook = [];
 
   CookBook.addRecipe(this.cookbook);
-
 }

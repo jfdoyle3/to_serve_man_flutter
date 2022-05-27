@@ -84,8 +84,8 @@ class _MyAppState extends State<MyApp> {
              cake.recipeName,
              style: TextStyle(fontSize: 25),
            ),
-
          ],
+
         ),
       ),
     );
