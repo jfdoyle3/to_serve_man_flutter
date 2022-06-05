@@ -82,10 +82,20 @@ class _MyAppState extends State<MyApp> {
            ),
            Text(
              cake.recipeName,
-             style: TextStyle(fontSize: 25),
+             style: const TextStyle(fontSize: 25),
            ),
-         ],
+           ListView.builder(
+              itemCount: cake.steps.length,
+              itemBuilder: (BuildContext context , int index){
+                return Center(
+                  child: Text('{$cake.steps[index]})',
+                      style: const TextStyle(fontSize: 12)
+                  )
+                );
+              }
 
+           )
+         ],
         ),
       ),
     );
