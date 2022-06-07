@@ -2,30 +2,54 @@ import 'package:flutter/material.dart';
 
 import './ingredient.dart';
 
-class Recipe extends StatefulWidget {
-  final String recipeName;
-  List ingredients;
-  List steps;
+class _Recipe extends StatefulWidget {
+  late final String _recipeName;
+  late final List _ingredients;
+  late final List _steps;
+  
 
-  Recipe(this.recipeName, this.ingredients, this.steps, {Key? key})
+  _Recipe(this._recipeName, this._ingredients, this._steps, {Key? key})
       : super(key: key);
 
+  List get ingredients => _ingredients;
+
+  set ingredients(List value) {
+    _ingredients = value;
+  }
+
+  String get recipeName => _recipeName;
+
+  set recipeName(String value) {
+
   @override
-  RecipeState createState() => RecipeState();
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
+    _recipeName = recipeName;
+
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
 }
 
-class RecipeState extends State<Recipe> {
+class RecipeState extends State<_Recipe> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:
-            AppBar(backgroundColor: Colors.blue, title: const Text('Recipe')),
+            AppBar(backgroundColor: Colors.blue,
+            title: const Text('Recipe')),
         body: Column(
           children: [
             Container(
               child: Row(
-               
+                
               ),
             ),
           ],
