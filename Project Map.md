@@ -4,7 +4,7 @@ BackEnd:
 
 Models/Objects
 
-    Essentials:    Recipe, Ingredient
+    Essentials:    Recipe, Ingredients
 
     Future: EnumMeaurements, Pantry, 
     
@@ -16,5 +16,7 @@ Display Recipe:
     name
 
     iterate through ingredients and steps.
+
+Use a tab widget for name, ingredients, steps.
 
     
