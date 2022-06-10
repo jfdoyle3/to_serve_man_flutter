@@ -34,7 +34,7 @@ void main() {
  //  }
 }
 
-void displayRecipe(Recipe recipe) {
+void displayRecipe(_Recipe recipe) {
   int stepNumber = 0;
   print('Recipe:');
   print(recipe.recipeName);
@@ -52,6 +52,7 @@ void displayRecipe(Recipe recipe) {
   }
 }
 
+
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -62,7 +63,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Recipe cake=Recipe('cake',
+  _Recipe cake=_Recipe('cake',
       [Ingredient(name: 'egg',amount: 1),
        Ingredient(name: 'flour',amount: 4, measurement: 'cups'),],
       ['mix ingredient','put batter in pan']);
