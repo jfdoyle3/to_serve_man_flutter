@@ -63,7 +63,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  _Recipe cake=_Recipe('cake',
+  Recipe cake=Recipe('cake',
       [Ingredient(name: 'egg',amount: 1),
        Ingredient(name: 'flour',amount: 4, measurement: 'cups'),],
       ['mix ingredient','put batter in pan']);

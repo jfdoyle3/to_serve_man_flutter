@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import './ingredient.dart';
 
-class _Recipe extends StatefulWidget {
+class Recipe extends StatefulWidget {
   late final String _recipeName;
   late final List _ingredients;
   late final List _steps;
   
 
-  _Recipe(this._recipeName, this._ingredients, this._steps, {Key? key})
+  Recipe(this._recipeName, this._ingredients, this._steps, {Key? key})
       : super(key: key);
 
   List get ingredients => _ingredients;
@@ -37,7 +37,7 @@ class _Recipe extends StatefulWidget {
   }
 }
 
-class RecipeState extends State<_Recipe> {
+class RecipeState extends State<Recipe> {
 
   @override
   Widget build(BuildContext context) {
