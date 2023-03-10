@@ -1,11 +1,11 @@
 {
-    "name": "to_serve_man_flutter",
-    "short_name": "to_serve_man_flutter",
+    "name": "to_serve_man",
+    "short_name": "to_serve_man",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Cookbook using Flutter",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

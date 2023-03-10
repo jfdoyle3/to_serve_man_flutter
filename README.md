@@ -1,6 +1,6 @@
-# to_serve_man_flutter
+# to_serve_man
 
-Cookbook using Flutter
+A new Flutter project.
 
 ## Getting Started
 

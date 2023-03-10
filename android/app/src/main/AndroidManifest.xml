@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jfdeveloper.to_serve_man_flutter">
+    package="com.example.to_serve_man">
    <application
-        android:label="to_serve_man_flutter"
+        android:label="to_serve_man"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
