@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/Widgets/add_recipe_page.dart';
-import 'package:to_serve_man/Widgets/recipe_list_page.dart';
+import 'package:to_serve_man/Widgets/Recipe/add_recipe_page.dart';
+import 'package:to_serve_man/Widgets/Recipe/recipe_list_page.dart';
 
 class Cookbook extends StatelessWidget {
   const Cookbook({super.key});

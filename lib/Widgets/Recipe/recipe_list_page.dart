@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/Widgets/recipe_page.dart';
+import 'package:to_serve_man/Widgets/Recipe/recipe_page.dart';
 
 const int itemCount = 20;
 

@@ -25,6 +25,7 @@ class _AddRecipePageState extends State<AddRecipePage> {
           ),
         ],
       ),
+      body: const Text('flour'),
       bottomNavigationBar: NavigationBar(destinations: const [
         NavigationDestination(
             icon: Icon(Icons.description), label: 'Description'),
