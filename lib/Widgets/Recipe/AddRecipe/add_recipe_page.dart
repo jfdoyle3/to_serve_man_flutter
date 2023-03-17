@@ -23,9 +23,20 @@ class _AddRecipePageState extends State<AddRecipePage> {
             },
             icon: const Icon(Icons.save),
           ),
+          IconButton(
+            onPressed: () {
+              debugPrint(
+                  '''Cancel New Recipe -think of using back arrow to cancel new creation
+                  clears object before created - pop up box y/n''');
+            },
+            icon: const Icon(Icons.cancel),
+          ),
         ],
       ),
-      body: const Text('flour'),
+      body: TextField(
+        autocorrect: true,
+        controller: textController,
+      ),
       bottomNavigationBar: NavigationBar(destinations: const [
         NavigationDestination(
             icon: Icon(Icons.description), label: 'Description'),

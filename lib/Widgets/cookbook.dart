@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/Widgets/Recipe/add_recipe_page.dart';
+import 'package:to_serve_man/Widgets/Recipe/AddRecipe/add_recipe_page.dart';
 import 'package:to_serve_man/Widgets/Recipe/recipe_list_page.dart';
 
 class Cookbook extends StatelessWidget {
