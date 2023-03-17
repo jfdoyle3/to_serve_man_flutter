@@ -25,6 +25,13 @@ class _AddRecipePageState extends State<AddRecipePage> {
           ),
         ],
       ),
+      bottomNavigationBar: NavigationBar(destinations: const [
+        NavigationDestination(
+            icon: Icon(Icons.description), label: 'Description'),
+        NavigationDestination(icon: Icon(Icons.blender), label: 'Ingredients'),
+        NavigationDestination(
+            icon: Icon(Icons.directions), label: 'Directions'),
+      ]),
     );
   }
 }

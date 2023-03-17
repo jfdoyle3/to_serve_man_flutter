@@ -14,6 +14,13 @@ class _RecipePageState extends State<RecipePage> {
       appBar: AppBar(
         title: const Text('Recipe Name'),
       ),
+      bottomNavigationBar: NavigationBar(destinations: const [
+        NavigationDestination(
+            icon: Icon(Icons.description), label: 'Description'),
+        NavigationDestination(icon: Icon(Icons.blender), label: 'Ingredients'),
+        NavigationDestination(
+            icon: Icon(Icons.directions), label: 'Directions'),
+      ]),
     );
   }
 }

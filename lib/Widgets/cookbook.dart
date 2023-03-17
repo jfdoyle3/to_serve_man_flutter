@@ -33,7 +33,6 @@ class _RootPageState extends State<RootPage> {
       body: const RecipeListPage(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          debugPrint('Add Recipe');
           Navigator.of(context).push(
             MaterialPageRoute(builder: (BuildContext context) {
               return const AddRecipePage();
