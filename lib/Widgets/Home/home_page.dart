@@ -1,7 +1,4 @@
-
 import 'package:flutter/material.dart';
-
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,46 +8,62 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int currentPage=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Cookbook - Home'),
+        appBar: AppBar(
+          title: const Text('Cookbook - Home'),
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.all(25),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.green,
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: const Text(
+                      'View Recipes',
+                      style: TextStyle(color: Colors.white, fontSize: 13.0),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(25),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Container(
+                    color: Colors.green,
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: const Text(
+                      'Add Recipe',
+                      style: TextStyle(color: Colors.white, fontSize: 13.0),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-          body: Center(child: Column(children: <Widget>[
-            Container(
-              margin: const EdgeInsets.all(25),
-              child:  TextButton(
-                onPressed: () {},
-                child: Container(
-                  color: Colors.green,
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: const Text(
-                    'View Recipes',
-                    style: TextStyle(color: Colors.white, fontSize: 13.0),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.all(25),
-              child:  TextButton(
-                onPressed: () {
-
-                },
-                child: Container(
-                  color: Colors.green,
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: const Text(
-                    'Add Recipe',
-                    style: TextStyle(color: Colors.white, fontSize: 13.0),
-                  ),
-                ),
-              ),
-            ),
-          ]
-          ))
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: const [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+          onDestinationSelected: (int index) {
+            setState(() {
+              currentPage = index;
+            });
+          },
+          selectedIndex: currentPage,
+        ),
       ),
     );
   }
