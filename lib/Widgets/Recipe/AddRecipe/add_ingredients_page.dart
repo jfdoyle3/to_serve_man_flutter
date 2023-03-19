@@ -37,13 +37,6 @@ class _AddIngredientsPageState extends State<AddIngredientsPage> {
         autocorrect: true,
         controller: textController,
       ),
-      bottomNavigationBar: NavigationBar(destinations: const [
-        NavigationDestination(
-            icon: Icon(Icons.description), label: 'Description'),
-        NavigationDestination(icon: Icon(Icons.blender), label: 'Ingredients'),
-        NavigationDestination(
-            icon: Icon(Icons.directions), label: 'Directions'),
-      ]),
     );
   }
 }
