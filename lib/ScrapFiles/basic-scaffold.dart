@@ -1,5 +1,3 @@
-
-
 import '../Models/ingredient.dart';
 import '../Models/recipe.dart';
 import 'package:flutter/material.dart';

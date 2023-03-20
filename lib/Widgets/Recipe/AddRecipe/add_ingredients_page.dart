@@ -13,9 +13,7 @@ class _AddIngredientsPageState extends State<AddIngredientsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          controller: textController,
-        ),
+        title: const Text('Ingredients'),
         actions: [
           IconButton(
             onPressed: () {

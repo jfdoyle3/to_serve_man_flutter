@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'add_directions_page.dart';
 import 'add_ingredients_page.dart';
 
-class AddRecipePage extends StatefulWidget {
-  const AddRecipePage({super.key});
+class AddDescriptionPage extends StatefulWidget {
+  const AddDescriptionPage({super.key});
 
   @override
-  State<AddRecipePage> createState() => _AddRecipePageState();
+  State<AddDescriptionPage> createState() => _AddDescriptionPageState();
 }
 
-class _AddRecipePageState extends State<AddRecipePage> {
+class _AddDescriptionPageState extends State<AddDescriptionPage> {
   int currentPage = 0;
   List<Widget> pages = const [AddIngredientsPage(), AddDirectionsPage()];
   final textController = TextEditingController();
@@ -28,7 +28,7 @@ class _AddRecipePageState extends State<AddRecipePage> {
           IconButton(
             onPressed: () {
               debugPrint(
-                  '''Cancel New Recipe -think of using back arrow to cancel new creation
+                  '''Cancel New Description -think of using back arrow to cancel new creation
                   clears object before created - pop up box y/n''');
             },
             icon: const Icon(Icons.cancel),

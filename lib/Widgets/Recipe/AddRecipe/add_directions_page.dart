@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 class AddDirectionsPage extends StatefulWidget {
   const AddDirectionsPage({super.key});
@@ -14,9 +13,7 @@ class _AddDirectionsPageState extends State<AddDirectionsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          controller: textController,
-        ),
+        title: const Text('Directions'),
         actions: [
           IconButton(
             onPressed: () {
