@@ -35,23 +35,23 @@ class _AddDescriptionPageState extends State<AddDescriptionPage> {
           ),
         ],
       ),
-      body: pages[currentPage],
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(
-              icon: Icon(Icons.description), label: 'Description'),
-          NavigationDestination(
-              icon: Icon(Icons.blender), label: 'Ingredients'),
-          NavigationDestination(
-              icon: Icon(Icons.directions), label: 'Directions'),
-        ],
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPage = index;
-          });
-        },
-        selectedIndex: currentPage,
-      ),
+      // body: pages[currentPage],
+      // bottomNavigationBar: NavigationBar(
+      //   destinations: const [
+      //     NavigationDestination(
+      //         icon: Icon(Icons.description), label: 'Description'),
+      //     NavigationDestination(
+      //         icon: Icon(Icons.blender), label: 'Ingredients'),
+      //     NavigationDestination(
+      //         icon: Icon(Icons.directions), label: 'Directions'),
+      //   ],
+      //   onDestinationSelected: (int index) {
+      //     setState(() {
+      //       currentPage = index;
+      //     });
+      //   },
+      //   selectedIndex: currentPage,
+      // ),
     );
   }
 }
