@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'add_directions_page.dart';
 import 'add_ingredients_page.dart';
 
-class AddRecipePage extends StatefulWidget {
-  const AddRecipePage({super.key});
+class NewRecipePage extends StatefulWidget {
+  const NewRecipePage({super.key});
 
   @override
-  State<AddRecipePage> createState() => _AddRecipePageState();
+  State<NewRecipePage> createState() => _NewRecipePageState();
 }
 
-class _AddRecipePageState extends State<AddRecipePage> {
+class _NewRecipePageState extends State<NewRecipePage> {
   int currentPage = 0;
   List<Widget> pages = const [AddIngredientsPage(), AddDirectionsPage()];
   final textController = TextEditingController();
@@ -17,7 +17,7 @@ class _AddRecipePageState extends State<AddRecipePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Description'),
+        title: const Text('New Recipe'),
         actions: [
           IconButton(
             onPressed: () {
@@ -35,23 +35,7 @@ class _AddRecipePageState extends State<AddRecipePage> {
           ),
         ],
       ),
-      body: pages[currentPage],
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(
-              icon: Icon(Icons.description), label: 'Description'),
-          NavigationDestination(
-              icon: Icon(Icons.blender), label: 'Ingredients'),
-          NavigationDestination(
-              icon: Icon(Icons.directions), label: 'Directions'),
-        ],
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPage = index;
-          });
-        },
-        selectedIndex: currentPage,
-      ),
+      body: const Text('Name: '),
     );
   }
 }

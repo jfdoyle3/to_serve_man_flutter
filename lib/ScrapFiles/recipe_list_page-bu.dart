@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_serve_man/Widgets/Recipe/recipe_page.dart';
 
 const int itemCount = 20;
 
@@ -16,6 +17,14 @@ class RecipeListPage extends StatelessWidget {
           trailing: const Icon(Icons.select_all),
           onTap: () {
             debugPrint('Item ${(index + 1)} selected');
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (BuildContext context) {
+                return const RecipePage();
+              }),
+            );
+          },
+          onLongPress: () {
+            debugPrint('Delete');
           },
         );
       },
