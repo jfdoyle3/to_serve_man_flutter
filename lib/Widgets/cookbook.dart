@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'Recipe/AddRecipe/new_recipe_page.dart';
-import 'Recipe/recipe_form_page.dart';
 import 'Recipe/recipe_list_page.dart';
 
 class Cookbook extends StatelessWidget {
@@ -37,7 +36,7 @@ class _RootPageState extends State<RootPage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (BuildContext context) {
-              return RecipeFormPage();
+              return const NewRecipePage();
             }),
           );
         },

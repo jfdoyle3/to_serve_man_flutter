@@ -51,6 +51,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   'Description',
                   style: TextStyle(fontSize: 18),
                 ),
+                // Description Box
                 TextFormField(
                   decoration: const InputDecoration(
                     hintText: 'Enter recipe description',
@@ -64,6 +65,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   'Ingredients',
                   style: TextStyle(fontSize: 18),
                 ),
+                // Ingredients Box
                 TextFormField(
                   decoration: const InputDecoration(
                     hintText: 'Enter recipe ingredients (separated by commas)',
@@ -77,6 +79,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   'Instructions',
                   style: TextStyle(fontSize: 18),
                 ),
+                // Instructions Bix
                 TextFormField(
                   decoration: const InputDecoration(
                     hintText: 'Enter recipe instructions',
@@ -85,6 +88,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   maxLines: null,
                   onSaved: (value) => _instructions = value!,
                 ),
+                // Image Box
                 const SizedBox(height: 16),
                 const Text(
                   'Image URL',
@@ -98,6 +102,7 @@ class _RecipeFormPageState extends State<RecipeFormPage> {
                   onSaved: (value) => _imageUrl = value!,
                 ),
                 const SizedBox(height: 16),
+                // button
                 ElevatedButton(
                   onPressed: () {
                     _submitForm();
