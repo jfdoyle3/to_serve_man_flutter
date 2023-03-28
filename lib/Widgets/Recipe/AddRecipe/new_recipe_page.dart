@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Models/recipe.dart';
+
 class NewRecipePage extends StatefulWidget {
   const NewRecipePage({super.key});
 
@@ -10,7 +12,7 @@ class NewRecipePage extends StatefulWidget {
 
 class _NewRecipePageState extends State<NewRecipePage> {
   final _formKey = GlobalKey<FormState>();
-
+  List<Recipe> recipeList = [];
   String _title = '';
 
   final textController = TextEditingController();
@@ -70,12 +72,14 @@ class _NewRecipePageState extends State<NewRecipePage> {
   }
 
   void _submitForm() {
+    // TODO: Save recipe data to database or API
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       if (kDebugMode) {
         print('Saved Recipe:\n$_title');
       }
-      // TODO: Save recipe data to database or API
+      Recipe newRecipe = Recipe.fromJsonString(_title);
+      recipeList.add(newRecipe);
       Navigator.pop(context);
     } else {
       print('Cancel recipe');
