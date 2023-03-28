@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../Models/recipe.dart';
+
 const int itemCount = 20;
 
-class RecipeListPage extends StatelessWidget {
-  const RecipeListPage({super.key});
+// ignore: must_be_immutable
+class RecipeListPage extends StatefulWidget {
+  RecipeListPage({super.key});
 
+  @override
+  State<RecipeListPage> createState() => _RecipeListPageState();
+}
+
+class _RecipeListPageState extends State<RecipeListPage> {
+  List<Recipe> recipeList = [];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
