@@ -1,6 +1,5 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'add_directions_page.dart';
-import 'add_ingredients_page.dart';
 
 class NewRecipePage extends StatefulWidget {
   const NewRecipePage({super.key});
@@ -12,7 +11,6 @@ class NewRecipePage extends StatefulWidget {
 class _NewRecipePageState extends State<NewRecipePage> {
   final _formKey = GlobalKey<FormState>();
 
-  int currentPage = 0;
   String _title = '';
 
   final textController = TextEditingController();
@@ -30,9 +28,9 @@ class _NewRecipePageState extends State<NewRecipePage> {
           ),
           IconButton(
             onPressed: () {
-              debugPrint(
-                  '''Cancel New Recipe -think of using back arrow to cancel new creation
-                  clears object before created - pop up box y/n''');
+              // Cancel New Recipe -think of using back arrow to cancel new creation
+              //     clears object before created - pop up box y/n
+              // _submitForm();
             },
             icon: const Icon(Icons.cancel),
           ),
@@ -74,9 +72,13 @@ class _NewRecipePageState extends State<NewRecipePage> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      print('Saved Recipe:\n${_title}');
+      if (kDebugMode) {
+        print('Saved Recipe:\n$_title');
+      }
       // TODO: Save recipe data to database or API
       Navigator.pop(context);
+    } else {
+      print('Cancel recipe');
     }
   }
 }

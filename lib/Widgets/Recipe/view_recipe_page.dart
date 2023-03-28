@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'AddRecipe/add_description_page.dart';
-import 'AddRecipe/add_directions_page.dart';
-import 'AddRecipe/add_ingredients_page.dart';
 
-class RecipePage extends StatefulWidget {
-  const RecipePage({super.key});
+class ViewRecipePage extends StatefulWidget {
+  const ViewRecipePage({super.key});
 
   @override
-  State<RecipePage> createState() => _RecipePageState();
+  State<ViewRecipePage> createState() => _ViewRecipePageState();
 }
 
-class _RecipePageState extends State<RecipePage> {
+class _ViewRecipePageState extends State<ViewRecipePage> {
   int currentPage = 0;
   List<Widget> pages = const [
-    AddDescriptionPage(),
-    AddIngredientsPage(),
-    AddDirectionsPage()
+    // viewDescriptionPage(),
+    // viewIngredientsPage(),
+    // viewDirectionsPage()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Recipe Root'),
+        title: const Text('View Recipe'),
       ),
       body: pages[currentPage],
       // bottomNavigationBar: NavigationBar(
