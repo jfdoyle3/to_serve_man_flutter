@@ -79,10 +79,13 @@ class _NewRecipePageState extends State<NewRecipePage> {
         print('Saved Recipe:\n$_title');
       }
       Recipe newRecipe = Recipe.fromJsonString(_title);
+
       recipeList.add(newRecipe);
       Navigator.pop(context);
     } else {
-      print('Cancel recipe');
+      if (kDebugMode) {
+        print('Cancel recipe');
+      }
     }
   }
 }
