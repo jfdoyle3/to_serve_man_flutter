@@ -6,7 +6,9 @@ const int itemCount = 20;
 
 // ignore: must_be_immutable
 class RecipeListPage extends StatefulWidget {
-  RecipeListPage({super.key});
+  final Recipe recipe;
+
+  const RecipeListPage({super.key, required this.recipe});
 
   @override
   State<RecipeListPage> createState() => _RecipeListPageState();
