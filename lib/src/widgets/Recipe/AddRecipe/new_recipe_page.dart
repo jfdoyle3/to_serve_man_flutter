@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/Widgets/Recipe/recipe_list_page.dart';
+import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
 
 import '../../../Models/recipe.dart';
 
@@ -76,13 +76,13 @@ class _NewRecipePageState extends State<NewRecipePage> {
     // TODO: Save recipe data to database or API
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      Recipe newRecipe = Recipe.fromJsonString(_title);
+      // Recipe newRecipe = Recipe.fromJsonString(_title);
       // recipeList.add(newRecipe);
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => RecipeListPage(recipe: newRecipe)),
-      );
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //       builder: (context) =>),
+      // );
     }
   }
 }
