@@ -7,9 +7,4 @@ using dependences sqflite , path, path provider
 sql: sqlite 3
 
 future implementation: firebase db intergration
-
-
-
-
-
-
+                       Authentication
