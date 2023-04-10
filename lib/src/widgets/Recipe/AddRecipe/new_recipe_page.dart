@@ -4,14 +4,12 @@ import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
 
 import '../../../Models/recipe.dart';
 
-class NewRecipePage extends StatefulWidget {
-  const NewRecipePage({super.key});
+typedef NewRecipeCallBack = void Function(String name);
 
-  @override
-  State<NewRecipePage> createState() => _NewRecipePageState();
-}
+class NewRecipePage extends StatelessWidget {
+  final NewRecipeCallBack onRecipeChange;
+  NewRecipePage({super.key, required this.onRecipeChange});
 
-class _NewRecipePageState extends State<NewRecipePage> {
   final _formKey = GlobalKey<FormState>();
   List<Recipe> recipeList = [];
   String _title = '';
@@ -79,6 +77,7 @@ class _NewRecipePageState extends State<NewRecipePage> {
       if (kDebugMode) {
         print('_title');
       }
+
       // Recipe newRecipe = Recipe.fromJsonString(_title);
       // recipeList.add(newRecipe);
       // Navigator.push(
