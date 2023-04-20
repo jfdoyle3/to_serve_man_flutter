@@ -1,9 +1,14 @@
 import 'dart:convert';
 
 class Recipe {
-  String? title;
+  String? _title;
 
-  Recipe(this.title);
+  Recipe(this._title);
+
+  String? get getTitle => _title;
+  set setTitle(String title) {
+    _title = title;
+  }
 
   // factory constructor Recipe.fromMap
   factory Recipe.fromMap(Map<String, Object> map) {

@@ -75,8 +75,9 @@ class NewRecipePage extends StatelessWidget {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       if (kDebugMode) {
-        print('_title');
+        print(_title);
       }
+      Recipe newRecipe = Recipe(_title);
 
       // Recipe newRecipe = Recipe.fromJsonString(_title);
       // recipeList.add(newRecipe);

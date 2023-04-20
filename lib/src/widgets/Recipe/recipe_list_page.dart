@@ -13,7 +13,6 @@ class RecipeListPage extends StatefulWidget {
 }
 
 class _RecipeListPageState extends State<RecipeListPage> {
-  List<Recipe> recipeList = [];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

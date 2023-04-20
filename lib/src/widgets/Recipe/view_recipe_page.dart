@@ -8,19 +8,13 @@ class ViewRecipePage extends StatefulWidget {
 }
 
 class _ViewRecipePageState extends State<ViewRecipePage> {
-  int currentPage = 0;
-  List<Widget> pages = const [
-    // viewDescriptionPage(),
-    // viewIngredientsPage(),
-    // viewDirectionsPage()
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('View Recipe'),
       ),
-      body: pages[currentPage],
+      body: const Text('Body'),
       // bottomNavigationBar: NavigationBar(
       //   destinations: const [
       //     NavigationDestination(

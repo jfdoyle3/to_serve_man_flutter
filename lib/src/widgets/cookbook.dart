@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../Models/recipe.dart';
 import 'Recipe/new_recipe_page.dart';
 import 'Recipe/recipe_list_page.dart';
+
+List<Recipe> initializeList() {
+  Recipe staticRecipe = Recipe('Static Recipe');
+  List<Recipe> listRecipes = [staticRecipe];
+  return listRecipes;
+}
 
 class Cookbook extends StatelessWidget {
   const Cookbook({super.key});
