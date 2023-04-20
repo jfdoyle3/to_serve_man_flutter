@@ -1,25 +1,23 @@
 import 'dart:convert';
 
-import './ingredient.dart';
-
 class Recipe {
-  String? recipeName;
+  String? title;
 
-  Recipe(this.recipeName);
+  Recipe(this.title);
 
-  // factory constructor Person.fromMap
+  // factory constructor Recipe.fromMap
   factory Recipe.fromMap(Map<String, Object> map) {
-    final recipeName = map['recipeName'] as String;
+    final title = map['title'] as String;
 
-    return Recipe(recipeName);
+    return Recipe(title);
   }
 
   Recipe.fromJson(Map<String, dynamic> json) {
-    recipeName = json['recipeName'];
+    title = json['title'];
   }
 
   Recipe.fromJsonString(String jsonString) {
     Map<String, dynamic> json = jsonDecode(jsonString);
-    recipeName = json['recipeName'];
+    title = json['title'];
   }
 }

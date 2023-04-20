@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
 
-import '../../../Models/recipe.dart';
+import '../../Models/recipe.dart';
 
 typedef NewRecipeCallBack = void Function(String name);
 
