@@ -15,21 +15,6 @@ class _ViewRecipePageState extends State<ViewRecipePage> {
         title: const Text('View Recipe'),
       ),
       body: const Text('Body'),
-      // bottomNavigationBar: NavigationBar(
-      //   destinations: const [
-      //     NavigationDestination(
-      //         icon: Icon(Icons.description), label: 'Description'),
-      //     NavigationDestination(
-      //         icon: Icon(Icons.blender), label: 'Ingredients'),
-      //     NavigationDestination(
-      //         icon: Icon(Icons.directions), label: 'Directions'),
-      //   ],
-      //   onDestinationSelected: (int index) {
-      //     setState(() {
-      //       currentPage = index;
-      //     });
-      //   },
-      //),
     );
   }
 }

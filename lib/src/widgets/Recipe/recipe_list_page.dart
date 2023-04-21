@@ -2,9 +2,30 @@ import 'package:flutter/material.dart';
 
 import '../../Models/recipe.dart';
 
-const int itemCount = 20;
+// Static Cookbook List
+Recipe staticRecipe = Recipe('Static Recipe', 'egg,flour');
+Recipe staticRecipe1 = Recipe('Static Recipe1', 'flour, cheese');
+Recipe staticRecipe2 = Recipe('Static Recipe2', 'milk,sugar');
+Recipe staticRecipe3 = Recipe('Static Recipe3', 'tomatoes, olive oil');
+Recipe staticRecipe4 = Recipe('Static Recipe4', 'soy sauce, olive oil');
+List<Recipe> listRecipes = [
+  staticRecipe,
+  staticRecipe1,
+  staticRecipe2,
+  staticRecipe3,
+  staticRecipe4
+];
 
-// ignore: must_be_immutable
+// void loadStaticData() {
+//   listRecipes.add(staticRecipe);
+//   listRecipes.add(staticRecipe1);
+//   listRecipes.add(staticRecipe2);
+//   listRecipes.add(staticRecipe3);
+//   listRecipes.add(staticRecipe4);
+// }
+
+int listCount = listRecipes.length;
+
 class RecipeListPage extends StatefulWidget {
   const RecipeListPage({super.key});
 
@@ -16,14 +37,14 @@ class _RecipeListPageState extends State<RecipeListPage> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: itemCount,
+      itemCount: listCount,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
-          title: Text('Item ${(index + 1)}'),
-          leading: const Icon(Icons.person),
-          trailing: const Icon(Icons.select_all),
+          title: Text('${listRecipes[index].getTitle}'),
+          leading: const Icon(Icons.restaurant),
+          // trailing: const Icon(Icons.select_all),
           onTap: () {
-            debugPrint('Item ${(index + 1)} selected');
+            debugPrint('${listRecipes[index].getIngredients} selected');
           },
         );
       },

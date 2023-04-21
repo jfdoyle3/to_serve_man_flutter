@@ -13,6 +13,7 @@ class NewRecipePage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   List<Recipe> recipeList = [];
   String _title = '';
+  String _ingredients = '';
 
   final textController = TextEditingController();
   @override
@@ -45,6 +46,9 @@ class NewRecipePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                //----------------------
+                // Recipe Title
+                //
                 const Text(
                   'Title',
                   style: TextStyle(fontSize: 18),
@@ -62,6 +66,26 @@ class NewRecipePage extends StatelessWidget {
                   },
                   onSaved: (value) => _title = value!,
                 ),
+                //---------------------
+                // Recipe Ingredients
+                //
+                const Text(
+                  'Ingredients',
+                  style: TextStyle(fontSize: 18),
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Enter recipe ingredients',
+                    border: OutlineInputBorder(),
+                  ),
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please enter a title';
+                  //   }
+                  //   return null;
+                  // },
+                  onSaved: (value) => _ingredients = value!,
+                ),
               ],
             ),
           ),
@@ -74,11 +98,11 @@ class NewRecipePage extends StatelessWidget {
     // TODO: Save recipe data to database or API
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+      Recipe newRecipe = Recipe(_title, _ingredients);
       if (kDebugMode) {
-        print(_title);
+        print(newRecipe.getTitle);
+        print(newRecipe.getIngredients);
       }
-      Recipe newRecipe = Recipe(_title);
-
       // Recipe newRecipe = Recipe.fromJsonString(_title);
       // recipeList.add(newRecipe);
       // Navigator.push(
