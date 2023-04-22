@@ -26,13 +26,19 @@ List<Recipe> listRecipes = [
 int listCount = listRecipes.length;
 
 class RecipeListPage extends StatefulWidget {
-  const RecipeListPage({super.key});
+  const RecipeListPage(Recipe newRecipe, {super.key});
 
   @override
   State<RecipeListPage> createState() => _RecipeListPageState();
 }
 
 class _RecipeListPageState extends State<RecipeListPage> {
+  callback(Recipe recipe) {
+    setState(() {
+      listRecipes.add(recipe);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

@@ -1,10 +1,27 @@
 # To Serve Man
 
-A CookBook app running in Flutter/Dart
+A CookBook Android/ IOS app using  Flutter/Dart language
 
-using dependences sqflite , path, path provider
 
-sql: sqlite 3
 
-future implementation: firebase db intergration
-                       Authentication
+#### Dependences:
+
+-  sqflite
+
+-  path
+
+-  path provider
+  
+  
+
+#### Database:
+
+- SQLite 3
+
+- Firebase (future implentation)
+
+
+
+#### Hardware:
+
+- pico w with a ?" screen to view recipe

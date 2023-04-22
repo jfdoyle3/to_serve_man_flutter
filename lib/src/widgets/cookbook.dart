@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Models/recipe.dart';
 import 'Recipe/new_recipe_page.dart';
 import 'Recipe/recipe_list_page.dart';
 
@@ -24,6 +25,10 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   String username = 'User';
+
+  // ignore: prefer_typing_uninitialized_variables
+  var defaultRecipe;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,8 +41,8 @@ class _RootPageState extends State<RootPage> {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (BuildContext context) {
               return NewRecipePage(
-                onRecipeChange: (String name) {},
-              );
+                  onRecipeChange: (String name) {},
+                  callBackFunction: defaultRecipe);
             }),
           );
         },

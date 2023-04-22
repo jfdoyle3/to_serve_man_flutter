@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
 
 import '../../Models/recipe.dart';
 
@@ -8,7 +8,11 @@ typedef NewRecipeCallBack = void Function(String name);
 // ignore: must_be_immutable
 class NewRecipePage extends StatelessWidget {
   final NewRecipeCallBack onRecipeChange;
-  NewRecipePage({super.key, required this.onRecipeChange});
+  final Function? callBackFunction;
+  NewRecipePage(
+      {super.key,
+      required this.onRecipeChange,
+      required this.callBackFunction});
 
   final _formKey = GlobalKey<FormState>();
   List<Recipe> recipeList = [];
@@ -99,17 +103,25 @@ class NewRecipePage extends StatelessWidget {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       Recipe newRecipe = Recipe(_title, _ingredients);
-      if (kDebugMode) {
-        print(newRecipe.getTitle);
-        print(newRecipe.getIngredients);
-      }
-      // Recipe newRecipe = Recipe.fromJsonString(_title);
+      callBackFunction!(newRecipe);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => RecipeListPage(newRecipe),
+        ),
+      );
+    }
+  }
+}
+
+
+
+
+// Notes:
+ // Recipe newRecipe = Recipe.fromJsonString(_title);
       // recipeList.add(newRecipe);
       // Navigator.push(
       //   context,
       //   MaterialPageRoute(
       //       builder: (context) =>),
       // );
-    }
-  }
-}
