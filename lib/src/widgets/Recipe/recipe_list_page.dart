@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../Models/recipe.dart';
 
 // Static Cookbook List
@@ -44,7 +43,8 @@ class _RecipeListPageState extends State<RecipeListPage> {
           leading: const Icon(Icons.restaurant),
           // trailing: const Icon(Icons.select_all),
           onTap: () {
-            // Navigate to View Recipe Page
+            // State: Recipe
+            //Navigate to View Recipe Page
             debugPrint('${listRecipes[index].getIngredients} selected');
           },
         );

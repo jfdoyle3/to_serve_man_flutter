@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ViewRecipePage extends StatefulWidget {
-  const ViewRecipePage({super.key});
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
 
-  @override
-  State<ViewRecipePage> createState() => _ViewRecipePageState();
-}
-
-class _ViewRecipePageState extends State<ViewRecipePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('View Recipe'),
-      ),
-      body: const Text('Body'),
-    );
+    return Container();
   }
 }

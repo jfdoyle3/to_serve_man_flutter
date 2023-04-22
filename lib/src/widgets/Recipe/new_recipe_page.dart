@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
 
 import '../../Models/recipe.dart';
 
 typedef NewRecipeCallBack = void Function(String name);
 
+// ignore: must_be_immutable
 class NewRecipePage extends StatelessWidget {
   final NewRecipeCallBack onRecipeChange;
   NewRecipePage({super.key, required this.onRecipeChange});
