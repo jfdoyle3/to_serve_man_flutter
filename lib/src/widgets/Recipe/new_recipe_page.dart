@@ -9,6 +9,8 @@ typedef NewRecipeCallBack = void Function(String name);
 class NewRecipePage extends StatelessWidget {
   final NewRecipeCallBack onRecipeChange;
   final Function? callBackFunction;
+
+  BuildContext context;
   NewRecipePage(
       {super.key,
       required this.onRecipeChange,
@@ -103,7 +105,7 @@ class NewRecipePage extends StatelessWidget {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       Recipe newRecipe = Recipe(_title, _ingredients);
-      callBackFunction!(newRecipe);
+      // callBackFunction!(newRecipe);
       Navigator.push(
         context,
         MaterialPageRoute(
