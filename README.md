@@ -24,4 +24,5 @@ A CookBook Android/ IOS app using  Flutter/Dart language
 
 #### Hardware:
 
-- pico w with a ?" screen to view recipe
+- pico w with a ?" screen to view recipe. Add a scale work like color macthing system.
+
