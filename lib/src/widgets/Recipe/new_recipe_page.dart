@@ -3,18 +3,10 @@ import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
 
 import '../../Models/recipe.dart';
 
-typedef NewRecipeCallBack = void Function(String name);
-
 // ignore: must_be_immutable
 class NewRecipePage extends StatelessWidget {
-  final NewRecipeCallBack onRecipeChange;
-  final Function? callBackFunction;
-
-  BuildContext context;
-  NewRecipePage(
-      {super.key,
-      required this.onRecipeChange,
-      required this.callBackFunction});
+  late BuildContext context;
+  NewRecipePage({super.key});
 
   final _formKey = GlobalKey<FormState>();
   List<Recipe> recipeList = [];
@@ -109,7 +101,8 @@ class NewRecipePage extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => RecipeListPage(newRecipe),
+          builder: (context) => const RecipeListPage(),
+          settings: RouteSettings(arguments: newRecipe),
         ),
       );
     }

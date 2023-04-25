@@ -40,9 +40,7 @@ class _RootPageState extends State<RootPage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (BuildContext context) {
-              return NewRecipePage(
-                  onRecipeChange: (String name) {},
-                  callBackFunction: defaultRecipe);
+              return NewRecipePage();
             }),
           );
         },
