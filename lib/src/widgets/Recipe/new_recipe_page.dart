@@ -98,11 +98,9 @@ class NewRecipePage extends StatelessWidget {
       _formKey.currentState!.save();
       Recipe newRecipe = Recipe(_title, _ingredients);
       // callBackFunction!(newRecipe);
-      Navigator.push(
-        context,
+      Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const RecipeListPage(),
-          settings: RouteSettings(arguments: newRecipe),
         ),
       );
     }

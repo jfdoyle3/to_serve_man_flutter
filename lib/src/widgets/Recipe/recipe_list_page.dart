@@ -26,21 +26,25 @@ List<Recipe> listRecipes = [
 int listCount = listRecipes.length;
 
 class RecipeListPage extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
   const RecipeListPage({super.key});
 
   @override
   State<RecipeListPage> createState() => _RecipeListPageState();
+
 }
 
 class _RecipeListPageState extends State<RecipeListPage> {
   @override
   Widget build(BuildContext context) {
-    final recipe = ModalRoute.of(context)!.settings.arguments as Recipe;
     return ListView.builder(
       itemCount: listCount,
       itemBuilder: (BuildContext context, int index) {
+        var recipe;
         return ListTile(
-          title: Text('${recipe.getTitle}'),
+          title: recipe.getTitle != null
+              ? Text('${.getTitle}')
+              : const Text('No recipes'),
           leading: const Icon(Icons.restaurant),
           // trailing: const Icon(Icons.select_all),
           onTap: () {
