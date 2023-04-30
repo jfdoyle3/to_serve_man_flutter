@@ -31,7 +31,6 @@ class RecipeListPage extends StatefulWidget {
 
   @override
   State<RecipeListPage> createState() => _RecipeListPageState();
-
 }
 
 class _RecipeListPageState extends State<RecipeListPage> {
@@ -40,10 +39,12 @@ class _RecipeListPageState extends State<RecipeListPage> {
     return ListView.builder(
       itemCount: listCount,
       itemBuilder: (BuildContext context, int index) {
-        var recipe;
+        Recipe? recipe;
         return ListTile(
-          title: recipe.getTitle != null
-              ? Text('${.getTitle}')
+          // ignore: dead_code
+          title: recipe?.getTitle != null
+              // ignore: dead_code
+              ? Text('${recipe?.getTitle}')
               : const Text('No recipes'),
           leading: const Icon(Icons.restaurant),
           // trailing: const Icon(Icons.select_all),
