@@ -34,18 +34,14 @@ class RecipeListPage extends StatefulWidget {
 }
 
 class _RecipeListPageState extends State<RecipeListPage> {
+  List<Recipe> recipeList = [];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: listCount,
+      itemCount: recipeList.length,
       itemBuilder: (BuildContext context, int index) {
-        Recipe? recipe;
         return ListTile(
-          // ignore: dead_code
-          title: recipe?.getTitle != null
-              // ignore: dead_code
-              ? Text('${recipe?.getTitle}')
-              : const Text('No recipes'),
+          title: Text('${recipeList[index].getTitle}'),
           leading: const Icon(Icons.restaurant),
           // trailing: const Icon(Icons.select_all),
           onTap: () {
