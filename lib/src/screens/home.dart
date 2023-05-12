@@ -6,8 +6,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: const [Cookbook()],
+    return const Row(
+      children: [Cookbook()],
     );
   }
 }
