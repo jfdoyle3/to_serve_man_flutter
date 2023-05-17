@@ -1,10 +1,11 @@
 import 'dart:convert';
 
 class Recipe {
+  int _id;
   String? _title;
   String? _ingredients;
 
-  Recipe(this._title, this._ingredients);
+  Recipe(this._id, this._title, this._ingredients);
 
   String? get getTitle => _title;
   set setTitle(String title) {
