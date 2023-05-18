@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../Models/cookbook_model.dart';
 import '../../Models/recipe.dart';
 
 // Static Cookbook List
@@ -35,8 +37,10 @@ class RecipeListPage extends StatefulWidget {
 
 class _RecipeListPageState extends State<RecipeListPage> {
   List<Recipe> recipeList = [];
+
   @override
   Widget build(BuildContext context) {
+    var cookbook = context.watch<CookbookModel>();
     return ListView.builder(
       itemCount: recipeList.length,
       itemBuilder: (BuildContext context, int index) {
