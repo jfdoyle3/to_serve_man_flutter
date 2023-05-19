@@ -36,16 +36,16 @@ class RecipeListPage extends StatefulWidget {
 }
 
 class _RecipeListPageState extends State<RecipeListPage> {
-  List<Recipe> recipeList = [];
+  // List<Recipe> recipeList = [];
 
   @override
   Widget build(BuildContext context) {
     var cookbook = context.watch<CookbookModel>();
     return ListView.builder(
-      itemCount: recipeList.length,
+      itemCount: cookbook.recipes.length,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
-          title: Text('${recipeList[index].getTitle}'),
+          title: Text('${cookbook.recipes[index].getTitle}'),
           leading: const Icon(Icons.restaurant),
           // trailing: const Icon(Icons.select_all),
           onTap: () {
