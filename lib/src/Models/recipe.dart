@@ -19,19 +19,22 @@ class Recipe {
 
   // factory constructor Recipe.fromMap
   factory Recipe.fromMap(Map<String, Object> map) {
+    final id = map['id'] as int;
     final title = map['title'] as String;
     final ingredients = map['ingredients'] as String;
 
-    return Recipe(title, ingredients);
+    return Recipe(id, title, ingredients);
   }
 
   Recipe.fromJson(Map<String, dynamic> json) {
+    _id = json['id'];
     _title = json['title'];
     _ingredients = json['ingredients'];
   }
 
   Recipe.fromJsonString(String jsonString) {
     Map<String, dynamic> json = jsonDecode(jsonString);
+    _id = json['id'];
     _title = json['title'];
     _ingredients = json['ingredients'];
   }

@@ -14,13 +14,13 @@ class CookbookModel extends ChangeNotifier {
 
   set recipe(Recipe newRecipe) {
     _recipe = newRecipe;
-    // Notify listeners, in case the new catalog provides information
+    // Notify listeners, in case the new cookbook provides information
     // different from the previous one. For example, availability of an item
     // might have changed.
     notifyListeners();
   }
 
-  /// List of items in the cart.
+  /// List of items in the cookbook
   List<Recipe> get items => _recipeId.map((id) => _recipe.getById(id)).toList();
 
   void add(Recipe recipe) {
