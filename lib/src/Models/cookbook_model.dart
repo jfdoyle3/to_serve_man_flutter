@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'package:flutter/foundation.dart';
 import 'package:to_serve_man/src/Models/recipe.dart';
 
-class CookbookModel extends ChangeNotifier {
+class CookbookModel {
   final List<Recipe> _recipes = [];
   late Recipe _recipe;
 
@@ -14,10 +14,6 @@ class CookbookModel extends ChangeNotifier {
 
   set recipe(Recipe newRecipe) {
     _recipe = newRecipe;
-    // Notify listeners, in case the new cookbook provides information
-    // different from the previous one. For example, availability of an item
-    // might have changed.
-    notifyListeners();
   }
 
   /// List of items in the cookbook
@@ -25,16 +21,13 @@ class CookbookModel extends ChangeNotifier {
 
   void add(Recipe recipe) {
     _recipes.add(recipe);
-    notifyListeners();
   }
 
   void removeAll() {
     _recipes.clear();
-    notifyListeners();
   }
 
   void delete(Recipe recipe) {
     _recipes.remove(recipe);
-    notifyListeners();
   }
 }
