@@ -11,9 +11,8 @@ A CookBook Android/ IOS / Desktop app using  Flutter/Dart language
 -  path
 
 -  path provider
-  
-  
 
+-  bloc
 #### Database:
 
 - SQLite 3
