@@ -23,5 +23,7 @@ A CookBook Android/ IOS / Desktop app using  Flutter/Dart language
 
 #### Hardware:
 
-- pico w with a ?" screen to view recipe. Add a scale work like color macthing system.
+- pico w with a ?" screen to view recipe. 
+Add a scale work to display the weight being poured and the app  tells the user to stop
+pouring when the recipe ingredient is weighed properly.
 
