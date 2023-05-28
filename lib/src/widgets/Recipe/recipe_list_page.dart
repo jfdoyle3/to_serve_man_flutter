@@ -4,18 +4,18 @@ import '../../Models/cookbook_model.dart';
 import '../../Models/recipe.dart';
 
 // Static Cookbook List
-Recipe staticRecipe = Recipe('Static Recipe', 'egg,flour');
-Recipe staticRecipe1 = Recipe('Static Recipe1', 'flour, cheese');
-Recipe staticRecipe2 = Recipe('Static Recipe2', 'milk,sugar');
-Recipe staticRecipe3 = Recipe('Static Recipe3', 'tomatoes, olive oil');
-Recipe staticRecipe4 = Recipe('Static Recipe4', 'soy sauce, olive oil');
-List<Recipe> listRecipes = [
-  staticRecipe,
-  staticRecipe1,
-  staticRecipe2,
-  staticRecipe3,
-  staticRecipe4
-];
+// Recipe staticRecipe = Recipe('Static Recipe', 'egg,flour');
+// Recipe staticRecipe1 = Recipe('Static Recipe1', 'flour, cheese');
+// Recipe staticRecipe2 = Recipe('Static Recipe2', 'milk,sugar');
+// Recipe staticRecipe3 = Recipe('Static Recipe3', 'tomatoes, olive oil');
+// Recipe staticRecipe4 = Recipe('Static Recipe4', 'soy sauce, olive oil');
+// List<Recipe> listRecipes = [
+//   staticRecipe,
+//   staticRecipe1,
+//   staticRecipe2,
+//   staticRecipe3,
+//   staticRecipe4
+// ];
 
 // void loadStaticData() {
 //   listRecipes.add(staticRecipe);
@@ -25,7 +25,7 @@ List<Recipe> listRecipes = [
 //   listRecipes.add(staticRecipe4);
 // }
 
-int listCount = listRecipes.length;
+//int listCount = listRecipes.length;
 
 class RecipeListPage extends StatefulWidget {
   // ignore: use_key_in_widget_constructors
@@ -51,7 +51,7 @@ class _RecipeListPageState extends State<RecipeListPage> {
           onTap: () {
             // State: Recipe
             //Navigate to View Recipe Page
-            debugPrint('${listRecipes[index].getIngredients} selected');
+            //  debugPrint('${listRecipes[index].getIngredients} selected');
           },
         );
       },

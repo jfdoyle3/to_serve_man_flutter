@@ -11,7 +11,7 @@ class NewRecipePage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   List<Recipe> recipeList = [];
   String _title = '';
-  String _ingredients = '';
+  // String _ingredients = '';
 
   final textController = TextEditingController();
   @override
@@ -82,7 +82,8 @@ class NewRecipePage extends StatelessWidget {
                   //   }
                   //   return null;
                   // },
-                  onSaved: (value) => _ingredients = value!,
+                  //(value) => _ingredients = value!
+                  // onSaved:,
                 ),
               ],
             ),
@@ -96,7 +97,7 @@ class NewRecipePage extends StatelessWidget {
     // TODO: Save recipe data to database or API
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      Recipe newRecipe = Recipe(_title, _ingredients);
+      Recipe newRecipe = Recipe(_title);
       // callBackFunction!(newRecipe);
       Navigator.of(context).push(
         MaterialPageRoute(

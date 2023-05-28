@@ -16,7 +16,7 @@ class CookbookModel {
   }
 
   /// List of items in the cookbook
-  List<Recipe> get items => _recipeId.map((id) => _recipe.getById(id)).toList();
+  // List<Recipe> get items => _recipeId.map((id) => _recipe.getById(id)).toList();
 
   void add(Recipe recipe) {
     _recipes.add(recipe);
