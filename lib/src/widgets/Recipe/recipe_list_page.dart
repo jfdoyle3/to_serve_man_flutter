@@ -27,17 +27,11 @@ import '../../Models/recipe.dart';
 
 //int listCount = listRecipes.length;
 
-class RecipeListPage extends StatefulWidget {
+class RecipeListPage extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const RecipeListPage({super.key});
 
-  @override
-  State<RecipeListPage> createState() => _RecipeListPageState();
-}
-
-class _RecipeListPageState extends State<RecipeListPage> {
   // List<Recipe> recipeList = [];
-
   @override
   Widget build(BuildContext context) {
     var cookbook = context.watch<CookbookModel>();

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-class Recipe {
+class RecipeModel {
   String? _title;
 
-  Recipe(this._title);
+  RecipeModel(this._title);
 
   String? get getTitle => _title;
 
@@ -12,17 +12,17 @@ class Recipe {
   }
 
   // factory constructor Recipe.fromMap
-  factory Recipe.fromMap(Map<String, Object> map) {
+  factory RecipeModel.fromMap(Map<String, Object> map) {
     final title = map['title'] as String;
 
-    return Recipe(title);
+    return RecipeModel(title);
   }
 
-  Recipe.fromJson(Map<String, dynamic> json) {
+  RecipeModel.fromJson(Map<String, dynamic> json) {
     _title = json['title'];
   }
 
-  Recipe.fromJsonString(String jsonString) {
+  RecipeModel.fromJsonString(String jsonString) {
     Map<String, dynamic> json = jsonDecode(jsonString);
     _title = json['title'];
   }

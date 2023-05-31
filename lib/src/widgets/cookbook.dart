@@ -28,8 +28,6 @@ class _RootPageState extends State<RootPage> {
 
   // ignore: prefer_typing_uninitialized_variables
 
-  List<Recipe> recipeList = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
