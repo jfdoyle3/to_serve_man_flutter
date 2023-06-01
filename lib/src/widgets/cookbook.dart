@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Models/recipe.dart';
 import 'Recipe/new_recipe_page.dart';
 import 'Recipe/recipe_list_page.dart';
 
@@ -30,6 +29,7 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
+    print('--> Build: Cookbook Page');
     return Scaffold(
       appBar: AppBar(
         title: Text('$username\'s CookBook'),

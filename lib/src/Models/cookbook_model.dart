@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_serve_man/src/Models/recipe_model.dart';
 
-class CookbookModel extends ChangeNotifier {
+class CookBookModel extends ChangeNotifier {
   final List<RecipeModel> _cookBook = [];
 
   List<RecipeModel> get recipes => _cookBook;

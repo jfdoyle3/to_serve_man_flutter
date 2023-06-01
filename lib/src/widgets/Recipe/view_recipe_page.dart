@@ -5,6 +5,7 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('--> Build: View Recipe Page');
     return Container();
   }
 }

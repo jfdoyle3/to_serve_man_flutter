@@ -6,6 +6,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('--> Build: App');
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(

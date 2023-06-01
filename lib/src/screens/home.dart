@@ -6,6 +6,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('--> Build: Home');
     return const Row(
       children: [Cookbook()],
     );

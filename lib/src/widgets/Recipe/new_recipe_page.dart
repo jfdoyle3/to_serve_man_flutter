@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/src/widgets/Recipe/recipe_list_page.dart';
+import 'package:to_serve_man/src/Models/cookbook_model.dart';
+
 import '../../Models/recipe_model.dart';
 
 class NewRecipePage extends StatelessWidget {
@@ -14,6 +15,7 @@ class NewRecipePage extends StatelessWidget {
   final textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    print('--> Build: New Recipe Page');
     return Scaffold(
       appBar: AppBar(
         title: const Text('New Recipe'),
@@ -95,7 +97,7 @@ class NewRecipePage extends StatelessWidget {
     // TODO: Save recipe data to database or API
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      // Recipe newRecipe = Recipe(_title);
+      CookBookModel().addRecipe(RecipeModel(_title));
       // // callBackFunction!(newRecipe);
       // Navigator.of(context).push(
       //   MaterialPageRoute(

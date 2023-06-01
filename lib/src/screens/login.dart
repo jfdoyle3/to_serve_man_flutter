@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class MyLogin extends StatelessWidget {
   const MyLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
+    print('--> Build: Login Page');
     return Scaffold(
       body: Center(
         child: Container(

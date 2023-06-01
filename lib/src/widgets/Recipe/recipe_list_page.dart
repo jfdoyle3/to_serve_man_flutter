@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../Models/cookbook_model.dart';
-import '../../Models/recipe.dart';
 
 // Static Cookbook List
 // Recipe staticRecipe = Recipe('Static Recipe', 'egg,flour');
@@ -34,21 +33,17 @@ class RecipeListPage extends StatelessWidget {
   // List<Recipe> recipeList = [];
   @override
   Widget build(BuildContext context) {
-    var cookbook = context.watch<CookbookModel>();
-    return ListView.builder(
-      itemCount: cookbook.recipes.length,
-      itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          title: Text('${cookbook.recipes[index].getTitle}'),
-          leading: const Icon(Icons.restaurant),
-          // trailing: const Icon(Icons.select_all),
-          onTap: () {
-            // State: Recipe
-            //Navigate to View Recipe Page
-            //  debugPrint('${listRecipes[index].getIngredients} selected');
-          },
-        );
-      },
-    );
+    print('--> Build: Recipe List Page');
+    return ChangeNotifierProvider(
+        create: (context) => CookBookModel(),
+        builder: (context, child) {
+          return Consumer<CookBookModel>(
+            builder: (BuildContext context, value, child) => ListView.builder(
+              itemCount: value.recipes.length,
+              itemBuilder: (BuildContext context, int index) =>
+                  Text(value.recipes[index].getTitle.toString()),
+            ),
+          );
+        });
   }
 }
