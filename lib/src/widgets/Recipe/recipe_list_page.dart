@@ -35,15 +35,19 @@ class RecipeListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     print('--> Build: Recipe List Page');
     return ChangeNotifierProvider(
-        create: (context) => CookBookModel(),
-        builder: (context, child) {
-          return Consumer<CookBookModel>(
-            builder: (BuildContext context, value, child) => ListView.builder(
-              itemCount: value.recipes.length,
-              itemBuilder: (BuildContext context, int index) =>
-                  Text(value.recipes[index].getTitle.toString()),
+      create: (context) => CookBookModel(),
+      builder: (context, child) {
+        return Consumer<CookBookModel>(
+          builder: (_, data, __) => Expanded(
+            child: ListView.builder(
+              itemCount: data.recipes.length,
+              itemBuilder: (context, int index) {
+                return Text(data.recipes[index].getTitle.toString());
+              },
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }

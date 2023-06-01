@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     print('--> Build: Home');
     return const Row(
-      children: [Cookbook()],
+      children: [],
     );
   }
 }
