@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'package:to_serve_man/src/routes/routes.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,11 +9,8 @@ class App extends StatelessWidget {
     print('--> Build: App');
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: Home(),
-        ),
-      ),
+      initialRoute: RouteManager.homePage,
+      onGenerateRoute: RouteManager.generatedRoutes,
     );
   }
 }

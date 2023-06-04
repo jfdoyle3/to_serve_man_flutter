@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_serve_man/src/Models/cookbook_model.dart';
 
-import '../../Models/recipe_model.dart';
+import '../Models/recipe_model.dart';
 
 class NewRecipePage extends StatelessWidget {
   late BuildContext context;
@@ -98,12 +98,6 @@ class NewRecipePage extends StatelessWidget {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       CookBookModel().addRecipe(RecipeModel(_title));
-      // // callBackFunction!(newRecipe);
-      // Navigator.of(context).push(
-      //   MaterialPageRoute(
-      //     builder: (context) => const RecipeListPage(),
-      //   ),
-      // );
     }
   }
 }
