@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:to_serve_man/src/pages/cookbook_page.dart';
 import 'package:to_serve_man/src/pages/home_page.dart';
-import 'package:to_serve_man/src/pages/new_recipe_page.dart';
+
+import '../pages/new_recipe_page.dart';
 
 class RouteManager {
   static const String homePage = '/';
@@ -20,7 +21,7 @@ class RouteManager {
         );
       case newRecipePage:
         return MaterialPageRoute(
-          builder: (context) => NewRecipePage(),
+          builder: (context) => const NewRecipePage(),
         );
 
       default:

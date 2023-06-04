@@ -1,115 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/src/Models/cookbook_model.dart';
-
+import 'package:provider/provider.dart';
+import '../Models/cookbook_model.dart';
 import '../Models/recipe_model.dart';
+import '../routes/routes.dart';
 
-class NewRecipePage extends StatelessWidget {
-  late BuildContext context;
-  NewRecipePage({super.key});
+class NewRecipePage extends StatefulWidget {
+  const NewRecipePage({Key? key}) : super(key: key);
 
-  final _formKey = GlobalKey<FormState>();
-  List<RecipeModel> recipeList = [];
-  String _title = '';
-  // String _ingredients = '';
+  @override
+  _NewRecipePageState createState() => _NewRecipePageState();
+}
 
-  final textController = TextEditingController();
+class _NewRecipePageState extends State<NewRecipePage> {
+  TextEditingController newRecipeController = TextEditingController();
+
+  @override
+  void dispose() {
+    newRecipeController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    print('--> Build: New Recipe Page');
+    print('Building New Recipe Page');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New Recipe'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              _submitForm();
-            },
-            icon: const Icon(Icons.save),
-          ),
-          IconButton(
-            onPressed: () {
-              // Cancel New Recipe -think of using back arrow to cancel new creation
-              //     clears object before created - pop up box y/n
-              // _submitForm();
-            },
-            icon: const Icon(Icons.cancel),
-          ),
-        ],
+        title: const Text('Title'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //----------------------
-                // Recipe Title
-                //
-                const Text(
-                  'Title',
-                  style: TextStyle(fontSize: 18),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter recipe title',
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: TextField(
+                keyboardType: TextInputType.text,
+                controller: newRecipeController,
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a title';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) => _title = value!,
-                ),
-                //---------------------
-                // Recipe Ingredients
-                //
-                const Text(
-                  'Ingredients',
-                  style: TextStyle(fontSize: 18),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter recipe ingredients',
-                    border: OutlineInputBorder(),
-                  ),
-                  // validator: (value) {
-                  //   if (value == null || value.isEmpty) {
-                  //     return 'Please enter a title';
-                  //   }
-                  //   return null;
-                  // },
-                  //(value) => _ingredients = value!
-                  // onSaved:,
-                ),
-              ],
+                    labelText: 'Please enter the title'),
+              ),
             ),
-          ),
+            ElevatedButton(
+              onPressed: () {
+                context.read<RecipeModel>().title = newRecipeController.text;
+                CookBookModel().addRecipe();
+                Navigator.of(context).pushNamed(RouteManager.homePage);
+              },
+              child: const Text('Submit'),
+            ),
+          ],
         ),
       ),
     );
   }
-
-  void _submitForm() {
-    // TODO: Save recipe data to database or API
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-      CookBookModel().addRecipe(RecipeModel(_title));
-    }
-  }
 }
-
-
-
-
-// Notes:
- // Recipe newRecipe = Recipe.fromJsonString(_title);
-      // recipeList.add(newRecipe);
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(
-      //       builder: (context) =>),
-      // );

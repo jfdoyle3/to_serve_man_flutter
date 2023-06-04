@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/src/Models/recipe_model.dart';
 
 class CookBookPage extends StatelessWidget {
-  final RecipeModel newRecipe;
-  const CookBookPage({super.key, required this.newRecipe});
+  const CookBookPage({super.key});
 
   @override
   Widget build(BuildContext context) {
