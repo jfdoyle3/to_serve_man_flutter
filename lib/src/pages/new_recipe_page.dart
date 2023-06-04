@@ -43,8 +43,8 @@ class _NewRecipePageState extends State<NewRecipePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                context.read<RecipeModel>().title = newRecipeController.text;
-                CookBookModel().addRecipe();
+                CookBookModel()
+                    .addRecipe(RecipeModel(newRecipeController.text));
                 Navigator.of(context).pushNamed(RouteManager.homePage);
               },
               child: const Text('Submit'),
