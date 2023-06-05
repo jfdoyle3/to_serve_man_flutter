@@ -8,12 +8,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('--> Build: App');
+    print('--> Build: App and provider');
     return MultiProvider(
       providers: [
-        // ChangeNotifierProvider(
-        //   create: (context) => RecipeModel(),
-        // ),
         ChangeNotifierProvider(
           create: (context) => CookBookModel(),
         ),

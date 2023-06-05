@@ -22,10 +22,19 @@ class _NewRecipePageState extends State<NewRecipePage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Building New Recipe Page');
+    print('Build: New Recipe Page');
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Title'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteManager.homePage);
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -43,8 +52,7 @@ class _NewRecipePageState extends State<NewRecipePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                CookBookModel()
-                    .addRecipe(RecipeModel(newRecipeController.text));
+                CookBookModel().addRecipe(RecipeModel('static pie'));
                 Navigator.of(context).pushNamed(RouteManager.homePage);
               },
               child: const Text('Submit'),

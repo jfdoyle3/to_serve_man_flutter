@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:to_serve_man/src/routes/routes.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,7 +12,22 @@ class HomePage extends StatelessWidget {
     print('Build: Home Page');
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('User'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteManager.settingsPage);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.exit_to_app),
+            onPressed: () {
+              exit(0);
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
