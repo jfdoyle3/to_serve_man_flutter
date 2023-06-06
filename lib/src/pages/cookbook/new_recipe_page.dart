@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../Models/cookbook_model.dart';
-import '../Models/recipe_model.dart';
-import '../routes/routes.dart';
+import '../../Models/cookbook_model.dart';
+import '../../Models/recipe_model.dart';
+import '../../routes/routes.dart';
 
 class NewRecipePage extends StatefulWidget {
   const NewRecipePage({Key? key}) : super(key: key);

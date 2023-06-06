@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Models/cookbook_model.dart';
-import '../routes/routes.dart';
+import '../../Models/cookbook_model.dart';
+import '../../routes/routes.dart';
 
 class CookBookPage extends StatelessWidget {
   const CookBookPage({super.key});

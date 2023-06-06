@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/src/pages/cookbook_page.dart';
+import 'package:to_serve_man/src/pages/cookbook/cookbook_page.dart';
 import 'package:to_serve_man/src/pages/home_page.dart';
 
-import '../pages/new_recipe_page.dart';
-import '../pages/settings_page.dart';
+import '../pages/cookbook/new_recipe_page.dart';
+import '../pages/settings/settings_page.dart';
 
 class RouteManager {
   static const String homePage = '/';
