@@ -40,7 +40,10 @@ class _SettingsPageState extends State<SettingsPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             // Theme text should reflect the switch - light or dark
-            children: [Text('Theme (Dark or Light)'), ThemeSwitch()],
+            children: [
+              Text('Theme (Dark or Light)'),
+              ThemeSwitch(),
+            ],
           ),
         ],
       ),

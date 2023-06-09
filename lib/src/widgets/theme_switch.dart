@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Models/settings_model.dart';
 
 class ThemeSwitch extends StatefulWidget {
