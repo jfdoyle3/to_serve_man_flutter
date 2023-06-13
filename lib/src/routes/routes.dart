@@ -15,7 +15,9 @@ class RouteManager {
     switch (settings.name) {
       case homePage:
         return MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => HomePage(
+            context: context,
+          ),
         );
       case cookBookPage:
         return MaterialPageRoute(

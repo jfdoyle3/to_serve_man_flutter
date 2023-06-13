@@ -19,14 +19,18 @@ class App extends StatelessWidget {
           create: (context) => SettingsModel(),
         ),
       ],
-      builder: (context, child) {
-        return MaterialApp(
-          theme: context.watch<SettingsModel>().appBarTheme,
-          debugShowCheckedModeBanner: false,
-          initialRoute: RouteManager.homePage,
-          onGenerateRoute: RouteManager.generatedRoutes,
-        );
-      },
+      child: Consumer<SettingsModel>(
+        builder: (context, value, child) {
+          return value.hasLoaded
+              ? MaterialApp(
+                  theme: value.darkTheme ? darkTheme : lightTheme,
+                  debugShowCheckedModeBanner: false,
+                  initialRoute: RouteManager.homePage,
+                  onGenerateRoute: RouteManager.generatedRoutes,
+                )
+              : const Text('loading- need to do async and load prefs');
+        },
+      ),
     );
   }
 }

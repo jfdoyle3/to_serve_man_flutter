@@ -1,10 +1,33 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:to_serve_man/src/routes/routes.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import '../Models/settings_model.dart';
+
+class HomePage extends StatefulWidget {
+  final BuildContext context;
+  const HomePage({super.key, required this.context});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  void getData() async {
+    // await Future.delayed(
+    //   const Duration(seconds: 4),
+    // );
+    // ignore: use_build_context_synchronously
+    widget.context.read<SettingsModel>().hasLoaded = true;
+  }
 
   @override
   Widget build(BuildContext context) {

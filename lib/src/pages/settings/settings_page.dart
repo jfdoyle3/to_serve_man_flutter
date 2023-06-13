@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:to_serve_man/src/Models/settings_model.dart';
 
 import '../../routes/routes.dart';
-import '../../widgets/theme_switch.dart';
+// import '../../widgets/theme_switch.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -33,17 +35,25 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
         ],
       ),
-      body: const Column(
+      body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            // Theme text should reflect the switch - light or dark
-            children: [
-              Text('Theme (Dark or Light)'),
-              ThemeSwitch(),
-            ],
+          const Card(
+            child: ListTile(
+              title: Text('Theme'),
+            ),
+          ),
+          Consumer<SettingsModel>(
+            builder: (context, value, child) {
+              return SwitchListTile(
+                title: const Text('Dark Theme'),
+                value: value.darkTheme,
+                onChanged: (newValue) {
+                  value.toggleTheme();
+                },
+              );
+            },
           ),
         ],
       ),
