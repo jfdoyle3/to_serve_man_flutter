@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_serve_man/src/Models/cookbook_model.dart';
 import 'package:to_serve_man/src/Models/settings_model.dart';
+import 'package:to_serve_man/src/pages/loading_page.dart';
 import 'package:to_serve_man/src/routes/routes.dart';
 
 class App extends StatelessWidget {
@@ -28,7 +29,9 @@ class App extends StatelessWidget {
                   initialRoute: RouteManager.homePage,
                   onGenerateRoute: RouteManager.generatedRoutes,
                 )
-              : const Text('loading- need to do async and load prefs');
+              : LoadingPage(
+                  context: context,
+                );
         },
       ),
     );

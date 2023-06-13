@@ -31,22 +31,25 @@ class SettingsModel extends ChangeNotifier {
   SettingsModel() {
     _loadSettingsFromPrefs();
   }
-
+// Model Constructor - loadSettingsFromPrefs: initializes a Preferences instance.
   _initializePreferences() async {
     _preferences ??= await SharedPreferences.getInstance();
   }
 
+// Model Constructor: initializes Preferences and Loads an instance.
   _loadSettingsFromPrefs() async {
     await _initializePreferences();
     _darkTheme = _preferences?.getBool('darkTheme') ?? false;
     notifyListeners();
   }
 
+// save: get instance then sets preference.
   _saveSettingsToPrefs() async {
     await _initializePreferences();
     _preferences?.setBool('darkTheme', _darkTheme);
   }
 
+// toggle theme method: toggle bool. and saves to prefs.
   void toggleTheme() {
     _darkTheme = !_darkTheme;
     _saveSettingsToPrefs();
