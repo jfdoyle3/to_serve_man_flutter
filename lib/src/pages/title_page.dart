@@ -18,25 +18,26 @@ class _TitlePageState extends State<TitlePage> {
   }
 
   void getData() async {
-    // need to remove this...
+    //  need to remove this...
     await Future.delayed(
       const Duration(seconds: 4),
     );
-    print('waited');
+    print('getting data but didn\'t waited');
     // ignore: use_build_context_synchronously
     widget.context.read<SettingsModel>().hasLoaded = true;
-    print('set to True');
+    print('set hasLoaded to True');
   }
 
   @override
   Widget build(BuildContext context) {
+    print('Build: Title Page - Loads Shared Prefs.');
     return MaterialApp(
       home: Scaffold(
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/logo.jpg'),
+              Image.asset('assets/images/title.jpg'),
               const Text('Loading Prefs.'),
             ],
           ),

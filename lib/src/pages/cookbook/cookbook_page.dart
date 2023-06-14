@@ -10,7 +10,7 @@ class CookBookPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('Build: CookBook Page');
-    print('Cookbook Lenth: ${CookBookModel().recipes.length}');
+    print('Cookbook Length: ${CookBookModel().recipes.length}');
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
