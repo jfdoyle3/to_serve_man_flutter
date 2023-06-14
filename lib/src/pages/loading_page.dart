@@ -18,6 +18,7 @@ class _LoadingPageState extends State<LoadingPage> {
   }
 
   void getData() async {
+    // need to remove this...
     await Future.delayed(
       const Duration(seconds: 4),
     );
