@@ -37,7 +37,10 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('To Serve Man!'),
+            const Text(
+              'To Serve Man!',
+              style: TextStyle(fontSize: 50),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

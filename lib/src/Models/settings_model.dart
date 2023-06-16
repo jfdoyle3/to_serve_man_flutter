@@ -15,12 +15,24 @@ ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: Colors.black87,
 );
 
+Text largeText = const Text(
+  'LargeText Setting working',
+  style: TextStyle(fontSize: 30),
+);
+
+Text normalText = const Text(
+  'normalText Setting working',
+  style: TextStyle(fontSize: 18),
+);
+
 class SettingsModel extends ChangeNotifier {
   bool _darkTheme = false;
   SharedPreferences? _preferences;
   bool _hasLoaded = false;
+  bool _largeText = false;
 
   bool get darkTheme => _darkTheme;
+  bool get largeText => _largeText;
   bool get hasLoaded => _hasLoaded;
 
   set hasLoaded(bool value) {
@@ -40,6 +52,7 @@ class SettingsModel extends ChangeNotifier {
   _loadSettingsFromPrefs() async {
     await _initializePreferences();
     _darkTheme = _preferences?.getBool('darkTheme') ?? false;
+    _largeText = _preferences?.getBool('largeText') ?? false;
     notifyListeners();
   }
 
@@ -47,11 +60,13 @@ class SettingsModel extends ChangeNotifier {
   _saveSettingsToPrefs() async {
     await _initializePreferences();
     _preferences?.setBool('darkTheme', _darkTheme);
+    _preferences?.setBool('largeText', _largeText);
   }
 
 // toggle theme method: toggle bool. and saves to prefs.
   void toggleTheme() {
     _darkTheme = !_darkTheme;
+    _largeText = !_largeText;
     _saveSettingsToPrefs();
     notifyListeners();
   }

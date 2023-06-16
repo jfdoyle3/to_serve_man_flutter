@@ -55,6 +55,22 @@ class _SettingsPageState extends State<SettingsPage> {
               );
             },
           ),
+          const Card(
+            child: ListTile(
+              title: Text('Text'),
+            ),
+          ),
+          Consumer<SettingsModel>(
+            builder: (context, value, child) {
+              return SwitchListTile(
+                title: const Text('Large'),
+                value: value.largeText,
+                onChanged: (newValue) {
+                  value.toggleTheme();
+                },
+              );
+            },
+          ),
         ],
       ),
     );
