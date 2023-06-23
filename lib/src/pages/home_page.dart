@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_serve_man/src/routes/routes.dart';
 
-import '../Models/settings_model.dart';
-
 class HomePage extends StatelessWidget {
   final BuildContext context;
   const HomePage({super.key, required this.context});
