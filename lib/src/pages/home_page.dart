@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
               builder: (context, value, child) {
                 return const Text(
                   'To Serve Man!',
-                  style: TextStyle(fontSize: 50),
+                  style: TextStyle(fontSize: 25),
                 );
               },
             ),
