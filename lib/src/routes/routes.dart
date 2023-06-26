@@ -10,8 +10,12 @@ class RouteManager {
   static const String cookBookPage = '/cookBookPage';
   static const String newRecipePage = '/newRecipePage';
   static const String settingsPage = '/settingsPage';
+  //static const String secondPage='/secondPage';
 
   static Route<dynamic> generatedRoutes(RouteSettings settings) {
+    // Pushing arguments through Objects while calling Navigator.pushNamed
+    final args = settings.arguments;
+
     switch (settings.name) {
       case homePage:
         return MaterialPageRoute(
@@ -31,6 +35,12 @@ class RouteManager {
         return MaterialPageRoute(
           builder: (context) => const SettingsPage(),
         );
+      // case secondPage:
+      //   return MaterialPageRoute(
+      //     builder: (_) => SecondPage(
+      //        data: args,
+      //      ),
+      //   );
 
       default:
         throw const FormatException('Error: Route not Found!');
