@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_serve_man/src/Models/recipe_model.dart';
+import 'package:to_serve_man/src/models/recipe_model.dart';
 
 class CookBookModel extends ChangeNotifier {
   final List<RecipeModel> _cookBook = [];

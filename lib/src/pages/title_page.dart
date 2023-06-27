@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_serve_man/src/Models/settings_model.dart';
+import 'package:to_serve_man/src/models/settings_model.dart';
 
 class TitlePage extends StatefulWidget {
   final BuildContext context;
