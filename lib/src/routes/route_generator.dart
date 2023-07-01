@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:to_serve_man/src/models/recipe_model.dart';
 import 'package:to_serve_man/src/pages/cookbook/cookbook_page.dart';
 import 'package:to_serve_man/src/pages/home_page.dart';
 
 import '../errors/errror_message.dart';
 import '../pages/cookbook/new_recipe_page.dart';
+import '../pages/second_page.dart';
 import '../pages/settings/settings_page.dart';
 
 class RouteManager {
@@ -11,7 +13,8 @@ class RouteManager {
   static const String cookBookPage = '/cookBookPage';
   static const String newRecipePage = '/newRecipePage';
   static const String settingsPage = '/settingsPage';
-  //static const String secondPage='/secondPage';
+  static const String recipeForm = '/recipeForm';
+  static const String secondPage = '/secondPage';
 
   static Route<dynamic> generatedRoutes(RouteSettings settings) {
     // Pushing arguments through Objects while calling Navigator.pushNamed
@@ -24,10 +27,18 @@ class RouteManager {
             context: context,
           ),
         );
-      case cookBookPage:
+      case recipeForm:
         return MaterialPageRoute(
-          builder: (context) => const CookBookPage(),
+          builder: (_) => const RecipeForm(),
         );
+
+      case cookBookPage:
+        if (args is RecipeModel) {
+          return MaterialPageRoute(
+            builder: (_) => CookBookPage(),
+          );
+        }
+        return ErrorMessage.errorRoute();
       case newRecipePage:
         return MaterialPageRoute(
           builder: (context) => const NewRecipePage(),
@@ -36,12 +47,12 @@ class RouteManager {
         return MaterialPageRoute(
           builder: (context) => const SettingsPage(),
         );
-      // case secondPage:
-      //   return MaterialPageRoute(
-      //     builder: (_) => SecondPage(
-      //        data: args,
-      //      ),
-      //   );
+      case secondPage:
+        return MaterialPageRoute(
+          builder: (_) => SecondPage(
+            recipe: args,
+          ),
+        );
 
       default:
         return ErrorMessage.errorRoute();

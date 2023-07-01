@@ -1,12 +1,19 @@
 class RecipeModel {
   String _title = '';
+  String _ingredients = '';
 
-  RecipeModel(this._title);
+  RecipeModel(this._title, this._ingredients);
 
   String get getTitle => _title;
 
   set title(String title) {
     _title = title;
+  }
+
+  String get getIngredients => _ingredients;
+
+  set ingredients(String ingredients) {
+    _ingredients = ingredients;
   }
 
 //   factory constructor Recipe.fromMap

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_serve_man/src/models/cookbook_model.dart';
 import 'package:to_serve_man/src/models/settings_model.dart';
-import 'package:to_serve_man/src/routes/routes.dart';
+import 'package:to_serve_man/src/routes/route_generator.dart';
 
 import '../pages/title_page.dart';
 

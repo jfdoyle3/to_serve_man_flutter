@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_serve_man/src/models/settings_model.dart';
 
-import '../../routes/routes.dart';
+import '../../routes/route_generator.dart';
 // import '../../widgets/theme_switch.dart';
 
 class SettingsPage extends StatefulWidget {
