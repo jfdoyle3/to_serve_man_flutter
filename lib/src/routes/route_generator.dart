@@ -49,12 +49,14 @@ class RouteManager {
           builder: (context) => const SettingsPage(),
         );
       case secondPage:
-        return MaterialPageRoute(
-          builder: (_) => SecondPage(
-            recipe: args,
-          ),
-        );
-
+        if (args is RecipeModel) {
+          return MaterialPageRoute(
+            builder: (_) => SecondPage(
+              recipe: args,
+            ),
+          );
+        }
+        return ErrorMessage.errorRoute();
       default:
         return ErrorMessage.errorRoute();
     }

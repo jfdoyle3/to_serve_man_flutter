@@ -26,7 +26,7 @@ class SecondPage extends StatelessWidget {
               style: TextStyle(fontSize: 50),
             ),
             Text(
-              'First: ${recipe.getTitle}\nLast: ${recipe.getIngredients}',
+              'Title: ${recipe.getTitle}\n',
               style: const TextStyle(fontSize: 20),
             ),
           ],

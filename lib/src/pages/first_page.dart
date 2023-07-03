@@ -7,7 +7,7 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //  User user = User('Jim', 'Doyle', 55);
-    RecipeModel recipe = RecipeModel('pie', 'apples');
+    RecipeModel recipe = RecipeModel('pie');
     //recipe page
     return Scaffold(
       appBar: AppBar(
