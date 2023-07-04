@@ -59,6 +59,13 @@ class HomePage extends StatelessWidget {
                   },
                   child: const Text('New Recipe'),
                 ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(RouteManager.secondPage);
+                  },
+                  child: const Text('Second Page'),
+                ),
               ],
             ),
           ],
