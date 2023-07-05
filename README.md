@@ -12,7 +12,8 @@ A CookBook Android/ IOS / Desktop app using  Flutter/Dart language
 
 -  path provider
 
--  bloc
+-  RiverPod
+
 #### Database:
 
 - SQLite 3
