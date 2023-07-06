@@ -20,6 +20,8 @@ A CookBook Android/ IOS / Desktop app using  Flutter/Dart language
 
 - Firebase (future implentation)
 
+- List (RAM base DB. Test to prepare for SQL/NONSQL DB)
+
 
 
 #### Hardware:
