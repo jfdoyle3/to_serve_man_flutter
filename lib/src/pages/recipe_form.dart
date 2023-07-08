@@ -93,7 +93,7 @@ class RecipeForm extends StatelessWidget {
     // TODO: Save recipe data to database or API
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      RecipeModel user = RecipeModel(_title);
+      RecipeModel user = RecipeModel.title(_title);
       Navigator.of(context).pushNamed(
         '/second',
         arguments: user,
