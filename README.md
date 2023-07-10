@@ -15,6 +15,8 @@ Mobile App
 
 -  RiverPod
 
+-  Google Fonts
+
 #### Database:
 
 - SQLite 3

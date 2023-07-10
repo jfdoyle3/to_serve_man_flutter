@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:to_serve_man/src/routes/route_generator.dart';
 
@@ -37,9 +38,11 @@ class HomePage extends StatelessWidget {
           children: [
             Consumer(
               builder: (context, value, child) {
-                return const Text(
-                  'To Serve Man!',
-                  style: TextStyle(fontSize: 25),
+                return Text(
+                  'To Serve Man',
+                  style: GoogleFonts.lobster(
+                    textStyle: const TextStyle(fontSize: 50),
+                  ),
                 );
               },
             ),
