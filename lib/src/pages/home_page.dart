@@ -32,46 +32,67 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Consumer(
-              builder: (context, value, child) {
-                return Text(
-                  'To Serve Man',
-                  style: GoogleFonts.lobster(
-                    textStyle: const TextStyle(fontSize: 50),
-                  ),
-                );
-              },
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Colors.blueGrey,
+                Colors.red.shade100,
+                Colors.blueGrey,
+              ],
             ),
-            Row(
+          ),
+          child: Center(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(RouteManager.cookBookPage);
-                  },
-                  child: const Text('Cookbook'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(RouteManager.newRecipePage);
-                  },
-                  child: const Text('New Recipe'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(RouteManager.secondPage);
-                  },
-                  child: const Text('Second Page'),
+                Image.asset('assets/images/title.jpg'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed(RouteManager.cookBookPage);
+                      },
+                      child: const Text('Cookbook'),
+                    ),
+                    const SizedBox(width: 10),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed(RouteManager.newRecipePage);
+                      },
+                      child: const Text('New Recipe'),
+                    ),
+                    const SizedBox(width: 10),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed(RouteManager.secondPage);
+                      },
+                      child: const Text('Second Page'),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );
