@@ -12,6 +12,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('Build: Home Page');
+
+    // create function to nav to pages to reduce repetitive code below
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -56,37 +59,71 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context)
                             .pushNamed(RouteManager.cookBookPage);
                       },
-                      child: const Text('Cookbook'),
+                      child: Text(
+                        'Cookbook',
+                        style: GoogleFonts.josefinSans(
+                          textStyle: const TextStyle(
+                            color: Colors.black87,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 9),
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context)
                             .pushNamed(RouteManager.newRecipePage);
                       },
-                      child: const Text('New Recipe'),
+                      child: Text(
+                        'New Recipe',
+                        style: GoogleFonts.josefinSans(
+                          textStyle: const TextStyle(
+                            color: Colors.black87,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 9),
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                          color: Colors.black87,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context)
                             .pushNamed(RouteManager.secondPage);
                       },
-                      child: const Text('Second Page'),
+                      child: Text(
+                        'Second Page',
+                        style: GoogleFonts.josefinSans(
+                          textStyle: const TextStyle(
+                            color: Colors.black87,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
