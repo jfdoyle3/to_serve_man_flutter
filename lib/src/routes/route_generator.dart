@@ -5,7 +5,7 @@ import 'package:to_serve_man/src/pages/home_page.dart';
 
 import '../errors/errror_message.dart';
 import '../pages/cookbook/new_recipe_page.dart';
-import '../pages/recipe_form.dart';
+import '../pages/cookbook/recipe_form.dart';
 import '../pages/second_page.dart';
 import '../pages/settings/settings_page.dart';
 
@@ -36,7 +36,9 @@ class RouteManager {
       case cookBookPage:
         if (args is RecipeModel) {
           return MaterialPageRoute(
-            builder: (_) => const CookBookPage(),
+            builder: (_) => CookBookPage(
+              recipe: args,
+            ),
           );
         }
         return ErrorMessage.errorRoute();

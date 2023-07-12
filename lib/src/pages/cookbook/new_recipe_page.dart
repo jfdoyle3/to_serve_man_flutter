@@ -51,7 +51,6 @@ class _NewRecipePageState extends State<NewRecipePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                CookBookModel().addRecipe(RecipeModel.title('static pie'));
                 Navigator.of(context).pushNamed(RouteManager.homePage);
               },
               child: const Text('Submit'),

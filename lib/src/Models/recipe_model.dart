@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class RecipeModel {
   String _title = '';
   String _ingredients = '';
@@ -17,20 +19,19 @@ class RecipeModel {
     _ingredients = ingredients;
   }
 
-//   factory constructor Recipe.fromMap
-//   factory RecipeModel.fromMap(Map<String, Object> map) {
-//     final title = map['title'] as String;
+  // factory constructor Recipe.fromMap
+  factory RecipeModel.fromMap(Map<String, Object> map) {
+    final title = map['title'] as String;
 
-//     return RecipeModel(title);
-//   }
+    return RecipeModel.title(title);
+  }
 
-//   RecipeModel.fromJson(Map<String, dynamic> json) {
-//     _title = json['title'];
-//   }
+  RecipeModel.fromJson(Map<String, dynamic> json) {
+    _title = json['title'];
+  }
 
-//   RecipeModel.fromJsonString(String jsonString) {
-//     Map<String, dynamic> json = jsonDecode(jsonString);
-//     _title = json['title'];
-//   }
-// }
+  RecipeModel.fromJsonString(String jsonString) {
+    Map<String, dynamic> json = jsonDecode(jsonString);
+    _title = json['title'];
+  }
 }
