@@ -53,7 +53,7 @@ class _NewRecipePageState extends State<NewRecipePage> {
               onPressed: () {
                 Navigator.of(context).pushNamed(RouteManager.homePage);
               },
-              child: const Text('Submit'),
+              child: const Text('Save'),
             ),
           ],
         ),

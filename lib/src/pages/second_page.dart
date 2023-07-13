@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_serve_man/src/models/cookbook_model.dart';
 import 'package:to_serve_man/src/models/recipe_model.dart';
 
 class SecondPage extends StatelessWidget {
@@ -6,13 +7,13 @@ class SecondPage extends StatelessWidget {
   // You can use any type you want.
   // final String data;
   RecipeModel recipe;
-  List recipeList = [];
+  CookBookModel cookBook = CookBookModel();
 
   SecondPage({super.key, required this.recipe});
   // cookbook page
   @override
   Widget build(BuildContext context) {
-    recipeList.add(recipe);
+    cookBook.addRecipe(recipe);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Routing App'),
@@ -26,7 +27,7 @@ class SecondPage extends StatelessWidget {
               style: TextStyle(fontSize: 50),
             ),
             Text(
-              'Title: ${recipe.getTitle}\n',
+              'Title: ${recipe.getTitle}\n${recipe.getIngredients}\n${cookBook.cookBookSize()}',
               style: const TextStyle(fontSize: 20),
             ),
           ],

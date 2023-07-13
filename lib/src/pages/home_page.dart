@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamed(RouteManager.newRecipePage);
+                            .pushNamed(RouteManager.recipeForm);
                       },
                       child: Text(
                         'New Recipe',
