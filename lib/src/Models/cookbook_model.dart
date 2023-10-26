@@ -15,4 +15,8 @@ class CookBookModel extends ChangeNotifier {
     _cookBook.remove(recipe);
     notifyListeners();
   }
+
+  int cookBookSize() {
+    return _cookBook.length;
+  }
 }
